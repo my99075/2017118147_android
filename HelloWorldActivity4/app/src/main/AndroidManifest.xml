@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".HelloWorldActivity3"></activity>
-        <activity android:name=".HelloWorldActivity2" />
-        <activity android:name=".HelloWorldActivity1"
-            android:launchMode="singleTask"/>
+        <activity android:name=".HelloWorldActivity2"
+            android:launchMode="singleInstance"/>
+        <activity android:name=".HelloWorldActivity1"/>
     </application>
 
 </manifest>
