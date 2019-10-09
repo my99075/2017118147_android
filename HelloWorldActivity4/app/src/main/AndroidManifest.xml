@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".HelloWorldActivity3"></activity>
         <activity android:name=".HelloWorldActivity2" />
-        <activity android:name=".HelloWorldActivity1"/>
+        <activity android:name=".HelloWorldActivity1"
+            android:launchMode="singleTask"/>
     </application>
 
 </manifest>

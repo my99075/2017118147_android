@@ -62,7 +62,7 @@ public class HelloWorldActivity2 extends AppCompatActivity {
     @Override
     protected void onDestroy(){
         super.onDestroy();
-        Log.d(TAG,"onDestroy");
+        Log.d("HelloWorld2","onDestroy");
     }
     @Override
     protected void onRestart(){

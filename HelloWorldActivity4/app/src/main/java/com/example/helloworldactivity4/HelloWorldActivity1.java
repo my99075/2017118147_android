@@ -9,13 +9,14 @@ import android.widget.Button;
 import android.content.Intent;
 
 public class HelloWorldActivity1 extends AppCompatActivity {
-    public static final String TAG="HelloWorldActivity1";
+    public static final String TAG = "HelloWorldActivity1";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("HelloWorld",this.toString());
+        Log.d("HelloWorld", this.toString());
         setContentView(R.layout.activity_hello_world1);
-        Button button1=(Button) findViewById(R.id.button_1);
+        Button button1 = (Button) findViewById(R.id.button_1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,7 +24,7 @@ public class HelloWorldActivity1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button button2=(Button) findViewById(R.id.button_2);
+        Button button2 = (Button) findViewById(R.id.button_2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +32,8 @@ public class HelloWorldActivity1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button button3=(Button) findViewById(R.id.button_3);
+
+        Button button3 = (Button) findViewById(R.id.button_3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +42,7 @@ public class HelloWorldActivity1 extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onStart(){
         super.onStart();
@@ -61,13 +64,13 @@ public class HelloWorldActivity1 extends AppCompatActivity {
         Log.d(TAG,"onStop");
     }
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG,"onDestroy");
+        Log.d(TAG, "onDestroy");
     }
-    @Override
-    protected void onRestart(){
-        super.onRestart();
-        Log.d(TAG,"onRestart");
+        @Override
+        protected void onRestart(){
+            super.onRestart();
+            Log.d("HelloWorldActivity1", "onRestart");
+        }
     }
-}
