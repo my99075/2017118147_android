@@ -2,8 +2,20 @@ package com.example.saveinformations;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class SecondActivity extends Activity {
     // 展示用户名和电话
@@ -41,7 +53,7 @@ public class SecondActivity extends Activity {
         et_changeUsername = (EditText) view.findViewById(R.id.username_et);
         et_changeOldPsw = (EditText) view.findViewById(R.id.psw_et);
         et_changeNewPsw = (EditText) view.findViewById(R.id.newpsw_et);
-        builder.setPositiveButton("确定", new OnClickListener() {
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 name = et_changeUsername.getText().toString().trim();
@@ -52,8 +64,7 @@ public class SecondActivity extends Activity {
                     Toast.makeText(SecondActivity.this, "选项不能为空", 0).show();
                     return;
                 }
-                String password = UserInfoManager.getInstance(
-                        SecondActivity.this).findData(name,
+                String password = UserInfoManager.getInstance(SecondActivity.this).findData(name,
                         UserInfoManager.PASSWORD);
                 String phone = UserInfoManager.getInstance(SecondActivity.this)
                         .findData(name, UserInfoManager.PHONE);
@@ -69,7 +80,7 @@ public class SecondActivity extends Activity {
                 }
             }
         });
-        builder.setNegativeButton("取消", new OnClickListener() {
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 UserInfoManager.dialogState(dialog, true);
