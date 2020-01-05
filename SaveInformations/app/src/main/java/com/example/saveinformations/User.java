@@ -5,7 +5,6 @@ public class User {
     private String name;
     private String password;
     private String phone;
-    private String phone1;
     public User(String name, String password, String phone) {
         super();
         this.name = name;
