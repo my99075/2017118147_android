@@ -97,7 +97,7 @@ public class SecondActivity extends Activity {
         listview.setOnItemClickListener(adapter);
         btn_findAllUser.setVisibility(View.GONE);
         btn_deleteAll.setVisibility(View.VISIBLE);
-        adapter.setOnClickListener(new onClickListener() {
+        adapter.setOnClickListener(new ListViewAdapter.onClickListener() {
             @Override
             public void onClick() {
                 if (allUser.size() == 0) {
