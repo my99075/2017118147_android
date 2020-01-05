@@ -2,8 +2,15 @@ package com.example.saveinformations;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
     // 登录界面所填写的用户名和密码
