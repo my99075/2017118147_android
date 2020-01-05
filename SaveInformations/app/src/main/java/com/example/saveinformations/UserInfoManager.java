@@ -1,5 +1,11 @@
 package com.example.saveinformations;
 
+import android.content.Context;
+import android.content.DialogInterface;
+
+import java.lang.reflect.Field;
+import java.util.List;
+
 public class UserInfoManager {
     private static UserInfoManager instance;
     private Context context;
