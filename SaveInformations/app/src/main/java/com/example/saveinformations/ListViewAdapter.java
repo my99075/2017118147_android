@@ -1,35 +1,51 @@
 package com.example.saveinformations;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class ListViewAdapter extends BaseAdapter implements OnItemClickListener {
+import java.util.List;
+
+public class ListViewAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
     private Context context;
     private List<User> allUser;
+
     public ListViewAdapter(Context context, List<User> allUser) {
         this.context = context;
         this.allUser = allUser;
     }
+
     private onClickListener listener;
-    public static interface onClickListener{
+
+    public static interface onClickListener {
         void onClick();
     }
-    public void setOnClickListener(onClickListener l){
+
+    public void setOnClickListener(onClickListener l) {
         this.listener = l;
     }
+
     @Override
     public int getCount() {
         return allUser.size();
     }
+
     @Override
     public Object getItem(int position) {
         return allUser.get(position);
     }
+
     @Override
     public long getItemId(int position) {
         return position;
     }
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View item = convertView != null ? convertView : View.inflate(context,
@@ -53,10 +69,13 @@ public class ListViewAdapter extends BaseAdapter implements OnItemClickListener 
                 });
         return item;
     }
+
+    @SuppressLint("WrongConstant")
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
                             long id) {
         final User user = (User) parent.getItemAtPosition(position);
-        Toast.makeText(context, "账号： "+user.getName()+"\n"+"密码：
-                "+user.getPassword(), 0).show();
+        Toast.makeText(context, "账号： " + user.getName() + "\n" + "密码:" + user.getPassword(),
+                0).show();
     }
+}
