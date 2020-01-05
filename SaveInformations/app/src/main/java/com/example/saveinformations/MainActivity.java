@@ -2,6 +2,7 @@ package com.example.saveinformations;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,6 +12,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class MainActivity extends Activity {
     // 登录界面所填写的用户名和密码
@@ -30,6 +33,7 @@ public class MainActivity extends Activity {
         et_psw_login = (EditText) findViewById(R.id.password_et);
     }
     // 登录事件
+    @SuppressLint("WrongConstant")
     public void login(View view) {
         String name = et_name_login.getText().toString().trim();
         String psw = et_psw_login.getText().toString().trim();
@@ -61,7 +65,7 @@ public class MainActivity extends Activity {
         et_username = (EditText) view.findViewById(R.id.editTxt_username_regist);
         et_phone_regist = (EditText) view.findViewById(R.id.editTxt_phone_regist);
         et_psw_regist = (EditText) view.findViewById(R.id.editTxt_psw_regist);
-        builder.setPositiveButton("确定", new OnClickListener() {
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 name = et_username.getText().toString().trim();
@@ -94,7 +98,7 @@ public class MainActivity extends Activity {
                 }
             }
         });
-        builder.setNegativeButton("取消", new OnClickListener() {
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 UserInfoManager.dialogState(dialog, true);
